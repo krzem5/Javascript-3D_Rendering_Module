@@ -1,7 +1,7 @@
 function color(r,g,b,a){
 	function hex(n){
 		if ((typeof n==="string")||(n instanceof String)){if (n.length==2){return n};return "0"+n}
-		if (-1<n<256){if (n.toString(16).length==2){return n.toString(16)};return "0"+n.toString(16)}
+		if (-1<n&&n<256){if (n.toString(16).length==2){return n.toString(16)};return "0"+n.toString(16)}
 		return "00"
 	}
 	if (r!=undefined&&g==undefined&&b==undefined&&a==undefined&&typeof r=="string"){
@@ -90,11 +90,11 @@ class Vector{
 }
 class _Mat{
 	constructor(dt){
-		this.data=[]
-		for (var y=0;y<dt.length;y++){
-			this.data.push([])
+		this.data=new Array(dt.length);
+		for (var y=0;y<this.data.length;y++){
+			this.data[y]=new Array(dt[0].length);
 			for (var x=0;x<dt[0].length;x++){
-				this.data[y].push(0)
+				this.data[y][x]=0
 			}
 		}
 		for (var y=0;y<dt.length;y++){
