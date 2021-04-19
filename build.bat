@@ -1,1 +1,0 @@
-"C:/Program Files/Google/Chrome/Application/chrome.exe" http://localhost:8020/projects/Javascript-3D_Rendering_Module/
